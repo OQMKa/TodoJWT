@@ -1,0 +1,14 @@
+package com.todoappjwt.service;
+
+import org.springframework.stereotype.Service;
+
+import com.todoappjwt.repository.LoginUserRepo;
+
+@Service
+public class LoginUserData {
+	private LoginUserRepo loginUserRepo;
+
+	public LoginUserData(LoginUserRepo loginUserRepo) {
+		this.loginUserRepo = loginUserRepo;
+	}
+}

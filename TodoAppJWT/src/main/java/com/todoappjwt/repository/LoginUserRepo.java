@@ -1,0 +1,11 @@
+package com.todoappjwt.repository;
+
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.todoappjwt.DTO.LoginUserParameters;
+
+public interface LoginUserRepo extends JpaRepository<LoginUserParameters,UUID> {
+
+}

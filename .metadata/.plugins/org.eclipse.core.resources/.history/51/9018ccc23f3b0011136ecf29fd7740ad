@@ -1,0 +1,4 @@
+spring.application.name=TodoAppJWT
+spring.datasource.url=jdbc:postgresql://localhost:5433/TodoJWT
+spring.datasource.username=postgres
+spring.datasource.password=1111
