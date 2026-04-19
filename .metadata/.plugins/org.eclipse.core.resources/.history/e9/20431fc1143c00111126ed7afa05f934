@@ -1,0 +1,66 @@
+package com.todoappjwt.DTO;
+
+import java.util.UUID;
+
+
+import org.antlr.v4.runtime.misc.NotNull;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class LoginUserParameters {
+	@Id
+	@NotNull
+	private UUID id;
+	
+	@NotNull
+	private String fName;
+	
+	@NotNull
+	private String lName;
+	
+	@NotNull
+	private String email;
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
+	public String getfName() {
+		return fName;
+	}
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "LoginUserParameters [id=" + id + ", fName=" + fName + ", lName=" + lName + ", email=" + email + "]";
+	}
+	
+	
+	
+	
+}

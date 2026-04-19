@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.todoappjwt.service.LoginUserData&apos; to &apos;LoginUserDataService&apos;&#x0D;&#x0A;- Original project: &apos;TodoAppJWT&apos;&#x0D;&#x0A;- Original element: &apos;com.todoappjwt.service.LoginUserData&apos;&#x0D;&#x0A;- Renamed element: &apos;com.todoappjwt.service.LoginUserDataService&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LoginUserData&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.todoappjwt.service{LoginUserData.java[LoginUserData" matchStrategy="1" name="LoginUserDataService" qualified="false" references="true" similarDeclarations="false" stamp="1776619619830" textual="false" version="1.0"/>
+</session>
