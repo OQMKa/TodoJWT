@@ -16,10 +16,4 @@ public class TodoService {
 		this.repo = repo;
 	}
 
-	public List<LoginUserParameters> findAll(String username) {
-		// TODO Auto-generated method stub
-		return repo.findAll();
-	}
-	
-
 }

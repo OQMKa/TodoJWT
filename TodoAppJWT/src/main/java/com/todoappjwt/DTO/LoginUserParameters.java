@@ -6,12 +6,14 @@ import java.util.UUID;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class LoginUserParameters {
 	@Id
-	@NotNull
+	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
 	
 	@NotNull

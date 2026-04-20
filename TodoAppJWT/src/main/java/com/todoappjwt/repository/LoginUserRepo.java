@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.todoappjwt.DTO.LoginUserParameters;
 
 public interface LoginUserRepo extends JpaRepository<LoginUserParameters,UUID> {
-//	List<LoginUserParameters> findById(UUID id);
+
 }
