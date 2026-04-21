@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class LoginUserParameters {
@@ -16,17 +17,22 @@ public class LoginUserParameters {
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
 	
-	@NotNull
+	@NotBlank
 	private String fName;
 	
-	@NotNull
+	@NotBlank
 	private String lName;
 	
-	@NotNull
+	@NotBlank
 	private String email;
 	
-	@NotNull
+	@NotBlank
 	private String username;
+	
+	@NotBlank
+	private String password;
+	
+	public LoginUserParameters() {}
 
 	public UUID getId() {
 		return id;
@@ -36,19 +42,19 @@ public class LoginUserParameters {
 		this.id = id;
 	}
 
-	public String getfName() {
+	public String getFName() {
 		return fName;
 	}
 
-	public void setfName(String fName) {
+	public void setFName(String fName) {
 		this.fName = fName;
 	}
 
-	public String getlName() {
+	public String getLName() {
 		return lName;
 	}
 
-	public void setlName(String lName) {
+	public void setLName(String lName) {
 		this.lName = lName;
 	}
 
@@ -59,7 +65,6 @@ public class LoginUserParameters {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 
 	public String getUsername() {
 		return username;
@@ -68,11 +73,25 @@ public class LoginUserParameters {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	@Override
 	public String toString() {
-		return "LoginUserParameters [id=" + id + ", fName=" + fName + ", lName=" + lName + ", email=" + email + "]";
+		return "LoginUserParameters [id=" + id + ", fName=" + fName + ", lName=" + lName + ", email=" + email
+				+ ", username=" + username + "]";
 	}
+
+	
+
+	
 	
 	
 	

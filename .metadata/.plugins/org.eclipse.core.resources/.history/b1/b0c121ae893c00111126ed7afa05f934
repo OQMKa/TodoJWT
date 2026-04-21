@@ -1,0 +1,5 @@
+package com.todoappjwt.config;
+
+public class SecurityConfig {
+
+}
