@@ -22,6 +22,7 @@ public class LoginUserService {
 
 	public LoginUserParameters createUser(LoginUserParameters user) {
 		String encodedPassword = passwordEncoder.encode(user.getPassword());
+		user.setPassword(encodedPassword);
 		return repo.save(user);	
 	}
 	

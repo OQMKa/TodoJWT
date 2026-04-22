@@ -1,6 +1,7 @@
 package com.todoappjwt.repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,5 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.todoappjwt.DTO.LoginUserParameters;
 
 public interface LoginUserRepo extends JpaRepository<LoginUserParameters,UUID> {
+
+	Optional<LoginUserParameters> findByUsername(String username);
 
 }

@@ -23,8 +23,8 @@ public class LoginUserController {
 		this.service = service;
 	}
 	
-	@PostMapping
-	public ResponseEntity<LoginUserParameters> createdUser(@Valid @RequestBody LoginUserParameters user){
+	@PostMapping("/register")
+	public ResponseEntity<LoginUserParameters> register(@Valid @RequestBody LoginUserParameters user){
 		LoginUserParameters savedUser = service.createUser(user);
 		return ResponseEntity
 				.status(HttpStatus.CREATED)
