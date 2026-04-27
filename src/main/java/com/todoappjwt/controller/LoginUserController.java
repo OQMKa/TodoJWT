@@ -1,0 +1,37 @@
+package com.todoappjwt.controller;
+
+import java.util.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.todoappjwt.entity.LoginUserParameters;
+import com.todoappjwt.service.LoginUserService;
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/users")
+public class LoginUserController {
+	private LoginUserService service;
+	
+	public LoginUserController(LoginUserService service) {
+		this.service = service;
+	}
+	
+	@PostMapping("/register")
+	public ResponseEntity<LoginUserParameters> register(@Valid @RequestBody LoginUserParameters user){
+		LoginUserParameters savedUser = service.createUser(user);
+		return ResponseEntity
+				.status(HttpStatus.CREATED)
+				.body(savedUser);
+		
+	}
+	//C:\SpringProjects\TodoAppJWT\TodoAppJWT --- change in the branch_one
+	
+}
