@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.todoappjwt.DTO.LoginUserParameters;
+
+import com.todoappjwt.entity.LoginUserParameters;
 import com.todoappjwt.service.LoginUserService;
 import jakarta.validation.Valid;
 
@@ -31,5 +32,6 @@ public class LoginUserController {
 				.body(savedUser);
 		
 	}
+	//C:\SpringProjects\TodoAppJWT\TodoAppJWT --- change in the branch_one
 	
 }

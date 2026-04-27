@@ -6,7 +6,7 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.todoappjwt.DTO.LoginUserParameters;
+import com.todoappjwt.entity.LoginUserParameters;
 
 public interface LoginUserRepo extends JpaRepository<LoginUserParameters,UUID> {
 
