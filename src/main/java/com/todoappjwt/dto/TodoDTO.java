@@ -45,6 +45,11 @@ public class TodoDTO {
 	public void setTargetDate(LocalDate targetDate) {
 		this.targetDate = targetDate;
 	}
+	@Override
+	public String toString() {
+		return "TodoDTO [id=" + id + ", username=" + username + ", description=" + description + ", priority="
+				+ priority + ", done=" + done + ", targetDate=" + targetDate + "]";
+	}
 	
 	
 

@@ -3,15 +3,21 @@ package com.todoappjwt.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.todoappjwt.dto.TodoDTO;
 import com.todoappjwt.entity.Todo;
 import com.todoappjwt.service.TodoService;
 
-@RestController("/users")
+@RestController
+@RequestMapping("/users")
+@CrossOrigin(origins="http://localhost:4200")
 public class TodoController {
 	private TodoService todoservice ;
 
@@ -29,4 +35,9 @@ public class TodoController {
 		
 	}
 	//POST - users/${username}/todos/ - changing on branch_two | checking change two | another change third
+	@PostMapping("/{username}/todos")
+	public ResponseEntity<TodoDTO> createTodo(@PathVariable String username, @RequestBody TodoDTO todoDTO){
+		TodoDTO createdTodo = todoservice.createTodo(username, todoDTO);
+		return ResponseEntity.status(201).body(createdTodo);
+	}
 }

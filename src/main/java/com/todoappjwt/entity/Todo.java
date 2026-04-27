@@ -22,7 +22,7 @@ public class Todo {
 	private String username;
 	
 	
-	@Lob
+	
 	private String description;
 	
 	private String priority;
@@ -106,6 +106,14 @@ public class Todo {
 		this.done = done;
 		this.targetDate = targetDate;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Todo [id=" + id + ", username=" + username + ", description=" + description + ", priority=" + priority
+				+ ", done=" + done + ", targetDate=" + targetDate + "]";
+	}
+	
 
 
 	
