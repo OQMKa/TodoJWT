@@ -4,7 +4,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
-import com.todoappjwt.DTO.LoginUserParameters;
+import com.todoappjwt.entity.LoginUserParameters;
 import com.todoappjwt.repository.LoginUserRepo;
 import java.util.*;
 @Service

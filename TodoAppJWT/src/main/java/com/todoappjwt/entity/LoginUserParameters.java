@@ -1,4 +1,4 @@
-package com.todoappjwt.DTO;
+package com.todoappjwt.entity;
 
 import java.util.UUID;
 
