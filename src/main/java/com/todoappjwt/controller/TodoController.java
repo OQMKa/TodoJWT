@@ -3,6 +3,7 @@ package com.todoappjwt.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,16 +28,18 @@ public class TodoController {
 	}
 
 
-	@GetMapping("/{username}/todos")
-	public ResponseEntity<List<TodoDTO>> getTodosByUsername(@PathVariable String username){
+	@GetMapping("/todos")
+	public ResponseEntity<List<TodoDTO>> getTodosByUsername(Authentication auth){
+		String username = auth.getName();
 		List<TodoDTO> todos = todoservice.getTodosByUsername(username);
 		
 		return ResponseEntity.ok(todos);
 		
 	}
 	//POST - users/${username}/todos/ - changing on branch_two | checking change two | another change third
-	@PostMapping("/{username}/todos")
-	public ResponseEntity<TodoDTO> createTodo(@PathVariable String username, @RequestBody TodoDTO todoDTO){
+	@PostMapping("/todos")
+	public ResponseEntity<TodoDTO> createTodo(Authentication auth, @RequestBody TodoDTO todoDTO){
+		String username = auth.getName();
 		TodoDTO createdTodo = todoservice.createTodo(username, todoDTO);
 		return ResponseEntity.status(201).body(createdTodo);
 	}
