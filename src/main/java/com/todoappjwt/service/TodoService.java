@@ -47,5 +47,15 @@ public class TodoService {
 		
 		return mapToDTO(savedTodo);
 	}
+	public void deleteTodo(Long id, String username) {
+		// TODO Auto-generated method stub
+		Todo todo = repo.findById(id)
+					.orElseThrow(()->new RuntimeException("Todo not found !"));
+		//OwnerShip check
+		if(!todo.getUsername().equals(username)) {
+			throw new RuntimeException("You are not authorized to delete this todo !");
+		}
+		repo.delete(todo);
+	}
 
 }
