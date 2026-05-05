@@ -45,6 +45,7 @@ public class TodoController {
 		return ResponseEntity.status(201).body(createdTodo);
 	}
 	
+	//Delete the Todo - you have to pass the todos/{id} -- you have to pass the id along with the url(we are using the @PathVariable so)
 	@DeleteMapping("/todos/{id}")
 	public ResponseEntity<String> deleteTodo(@PathVariable Long id, Authentication auth ){
 		String username = auth.getName();
