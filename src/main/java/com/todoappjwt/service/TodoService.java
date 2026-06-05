@@ -2,6 +2,7 @@ package com.todoappjwt.service;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.todoappjwt.dto.TodoDTO;
@@ -13,7 +14,7 @@ public class TodoService {
 	private TodoRepository repo;
 	
 	public TodoService(TodoRepository repo) {
-		System.out.println("SERVICE CREATED");
+		System.out.println("metadata(@Serice, @RestContorller, @Repository) IN ***com.todoappjwt*** are scanned by @ComponentScan");
 		this.repo = repo;
 	}
 	public List<TodoDTO> getTodosByUsername(String username) {
@@ -56,6 +57,11 @@ public class TodoService {
 			throw new RuntimeException("You are not authorized to delete this todo !");
 		}
 		repo.delete(todo);
+	}
+	//trying for @aspect and @PointCut, Designators(-@Within, Within, @Target, Target)
+	public ResponseEntity<String> aspect(){
+		System.out.println("aspect method in todoservice.");
+		return ResponseEntity.ok("Service");
 	}
 
 }
