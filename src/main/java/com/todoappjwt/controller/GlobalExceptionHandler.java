@@ -23,9 +23,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ArrayIndexOutOfBoundsException.class)
     public ResponseEntity<?> handleTodoNotFoundException(ArrayIndexOutOfBoundsException ex) {
 		ErrorResponse error = new ErrorResponse(LocalDateTime.now(), ex.getMessage(),"from GlobalExceptionHanndler - Maximum size reached." );
-		// ErrorResponse error = new  ErrorResponse(LocalDateTime.now(),ex.getMessage(), "from todoController's below @ExceptionHandller");
-        // return ResponseEntity.status(HttpStatus.NOT_FOUND)
-        //         .body(ex.getMessage());
 		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 }
