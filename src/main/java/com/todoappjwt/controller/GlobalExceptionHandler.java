@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import com.todoappjwt.Exceptions.TestExceptionForGlobalExceptionHandler;
 import com.todoappjwt.Exceptions.TodoNotFoundException;
 import com.todoappjwt.entity.ErrorResponse;
 
@@ -24,5 +25,12 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handleTodoNotFoundException(ArrayIndexOutOfBoundsException ex) {
 		ErrorResponse error = new ErrorResponse(LocalDateTime.now(), ex.getMessage(),"from GlobalExceptionHanndler - Maximum size reached." );
 		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+    @ExceptionHandler(TestExceptionForGlobalExceptionHandler.class)
+    public ResponseEntity<?> handleTestException(TestExceptionForGlobalExceptionHandler ex){
+    	ErrorResponse error = new ErrorResponse(LocalDateTime.now(),
+    											ex.getMessage(),
+    											"from TestExceptionForGlobalExceptionHandler - Customized Exception is working. ");
+    	return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 }
